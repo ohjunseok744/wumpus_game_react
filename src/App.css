@@ -1,0 +1,139 @@
+/* body 스타일 설정 */
+body {
+  font-family: Arial, sans-serif; /* 폰트 설정 */
+  background-color: #f0f0f0; /* 배경 색상 설정 */
+  display: flex; /* 플렉스 박스 레이아웃 사용 */
+  flex-direction: column; /* 플렉스 방향을 세로로 설정 */
+  align-items: center; /* 아이템을 중앙 정렬 */
+  justify-content: center; /* 아이템을 세로 중앙 정렬 */
+  height: 100vh; /* 화면 높이를 100%로 설정 */
+  margin: 0; /* 기본 마진 제거 */
+}
+
+/* 게임 보드 스타일 설정 */
+#gameBoard {
+  display: grid; /* 그리드 레이아웃 사용 */
+  grid-template-columns: repeat(4, 100px); /* 4개의 열을 100px씩 반복 */
+  grid-template-rows: repeat(4, 100px); /* 4개의 행을 100px씩 반복 */
+  gap: 5px; /* 그리드 아이템 간의 간격 설정 */
+  margin-top: 20px; /* 위쪽 마진 설정 */
+}
+
+/* 각 셀의 스타일 설정 */
+.cell {
+  width: 100px; /* 셀 너비 설정 */
+  height: 100px; /* 셀 높이 설정 */
+  border: 1px solid #000; /* 셀 경계 설정 */
+  display: flex; /* 플렉스 박스 레이아웃 사용 */
+  justify-content: center; /* 아이템을 가로 중앙 정렬 */
+  align-items: center; /* 아이템을 세로 중앙 정렬 */
+  position: relative; /* 상대 위치 설정 */
+  background-color: #fff; /* 배경 색상 설정 */
+}
+
+/* 에이전트가 있는 셀의 스타일 설정 */
+.agent-cell {
+  position: relative; /* 상대 위치 설정 */
+}
+
+/* 에이전트 스타일 설정 */
+.agent {
+  width: 100%; /* 너비를 부모 요소에 맞춤 */
+  height: 100%; /* 높이를 부모 요소에 맞춤 */
+  background-image: url('/agent.jpg'); /* 배경 이미지 설정 */
+  background-size: cover; /* 배경 이미지 크기 설정 */
+  background-position: center; /* 배경 이미지 위치 설정 */
+  transform-origin: center; /* 변환 기준점을 가운데로 설정 */
+}
+
+/* 에이전트의 방향에 따른 회전 설정 */
+.agent.right {
+  transform: rotate(0deg); /* 오른쪽을 바라볼 때 회전 각도 */
+}
+
+.agent.left {
+  transform: rotate(180deg); /* 왼쪽을 바라볼 때 회전 각도 */
+}
+
+.agent.up {
+  transform: rotate(-90deg); /* 위쪽을 바라볼 때 회전 각도 */
+}
+
+.agent.down {
+  transform: rotate(90deg); /* 아래쪽을 바라볼 때 회전 각도 */
+}
+
+/* 스텐치(악취) 효과를 가진 셀의 스타일 설정 */
+.stench {
+  width: 100%; /* 너비를 부모 요소에 맞춤 */
+  height: 100%; /* 높이를 부모 요소에 맞춤 */
+  background-color: green; /* 배경 색상 설정 */
+  background-image: url('/agent.jpg'); /* 깜박일 때 사용할 이미지 설정 */
+  background-size: cover; /* 배경 이미지 크기 설정 */
+  background-position: center; /* 배경 이미지 위치 설정 */
+  animation: stench-blink 1s infinite; /* 깜박임 애니메이션 설정 */
+  z-index: 100;
+}
+
+/* 스텐치 효과를 가진 셀의 애니메이션 설정 */
+.stench-cell {
+  animation: stench-blink 1s infinite; /* 깜박임 애니메이션 설정 */
+  background-color: green;
+}
+
+/* 깜박임 애니메이션 키프레임 설정 */
+@keyframes stench-blink {
+  0%, 100% {
+    background-color: green; /* 처음과 끝에는 녹색 배경 */
+    background-image: none; /* 배경 이미지 없음 */
+  }
+  50% {
+    background-color: transparent; /* 중간에는 투명 배경 */
+    background-image: url('/agent.jpg'); /* 중간에 깜박이는 이미지 */
+  }
+}
+
+/* 컨트롤 버튼 스타일 설정 */
+.controls {
+  margin-top: 20px; /* 위쪽 마진 설정 */
+}
+
+/* 버튼 스타일 설정 */
+button {
+  margin: 5px; /* 버튼 간의 간격 설정 */
+  padding: 10px 20px; /* 버튼의 내부 여백 설정 */
+  font-size: 16px; /* 버튼 글꼴 크기 설정 */
+}
+
+/* 게임 오버 화면 스타일 설정 */
+.gameOver {
+  margin-top: 20px; /* 위쪽 마진 설정 */
+  text-align: center; /* 텍스트 중앙 정렬 */
+}
+
+/* 게임 오버 메시지 스타일 설정 */
+.gameOver h2 {
+  margin-bottom: 20px; /* 아래쪽 마진 설정 */
+}
+
+/* 게임 오버 버튼 스타일 설정 */
+.gameOver button {
+  margin: 5px; /* 버튼 간의 간격 설정 */
+  padding: 10px 20px; /* 버튼의 내부 여백 설정 */
+  font-size: 16px; /* 버튼 글꼴 크기 설정 */
+}
+
+/* 웜퍼스 스크린 스타일 설정 */
+.wumpusScreen {
+  width: 50%; /* 너비 설정 */
+  height: 53%; /* 높이 설정 */
+  background-image: url('/wumpus.jpg'); /* 웜퍼스 이미지 설정 */
+  background-size: contain; /* 배경 이미지 크기 설정 */
+  background-position: center; /* 배경 이미지 위치 설정 */
+  background-repeat: no-repeat; /* 배경 이미지 반복 없음 */
+  position: fixed; /* 고정 위치 설정 */
+  top: 43%; /* 화면의 43% 지점에 위치 */
+  left: 50%; /* 화면의 50% 지점에 위치 */
+  transform: translate(-50%, -50%); /* 중앙으로 이동 */
+  z-index: 1000; /* 다른 요소보다 위에 표시 */
+}
