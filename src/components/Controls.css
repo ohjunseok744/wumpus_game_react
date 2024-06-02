@@ -1,0 +1,12 @@
+/* Controls.css */
+
+.controls {
+  margin-top: 20px;
+}
+
+/* 버튼 스타일 설정 */
+button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+}

@@ -1,0 +1,64 @@
+/* GameOver.css */
+
+/* 게임 오버 화면 스타일 설정 */
+.gameOver {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* 게임 오버 메시지 스타일 설정 */
+.gameOver h2 {
+  margin-bottom: 20px;
+}
+
+/* 게임 오버 버튼 스타일 설정 */
+.gameOver button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+/* 웜퍼스 스크린 스타일 설정 */
+.wumpusScreen {
+  width: 50%;
+  height: 53%;
+  background-image: url('/wumpus.jpg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: fixed;
+  top: 43%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+/* 구덩이 스크린 스타일 설정 */
+.pitScreen {
+  width: 50%;
+  height: 53%;
+  background-image: url('/pit.jpg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: fixed;
+  top: 43%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+/* 성공 스크린 스타일 설정 */
+.successScreen {
+  width: 50%;
+  height: 53%;
+  background-image: url('/success.jpg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: fixed;
+  top: 43%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
